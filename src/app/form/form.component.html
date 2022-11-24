@@ -1,0 +1,250 @@
+<div class="container" (change)="changedata($event)">
+
+  <h4>Choose Your Subject Grade as per Theory Subject</h4>
+  <div class="form">
+    <div>
+      <label for="subject">{{sub1name}}</label>
+      <select [disabled]="disable1" class="group1" (change)="englishPick($event)" >
+        <option value="" selected>Choose your marks</option>
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+
+      </select>
+      <label for="subject">{{sub2name}} </label>
+      <select [disabled]="disable2" class="group1" (change)="nepaliPick($event)">
+        <option value="" selected>Choose your marks</option>
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+      </select>
+      <label for="subject">{{sub3name}} </label>
+      <select [disabled]="disable3"  class="group1" (change)="mathPick($event)">
+        <option value="" selected>Choose your marks</option>
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+      </select>
+    </div>
+    <label for="subject">{{sub4name}} </label>
+    <select [disabled]="disable4" (change)="sciencePick($event)">
+      <option value="" selected>Choose your marks</option>
+      <option value="A+">A+</option>
+      <option value="A">A</option>
+      <option value="B+">B+</option>
+      <option value="B">B</option>
+      <option value="C+">C+</option>
+        <option value="C">C</option>
+    </select>
+    <label for="subject">{{sub5name}} </label>
+    <select [disabled]="disable5" (change)="accountPick($event)">
+      <option value="" selected>Choose your marks</option>
+      <option value="A+">A+</option>
+      <option value="A">A</option>
+      <option value="B+">B+</option>
+      <option value="B">B</option>
+      <option value="C+">C+</option>
+        <option value="C">C</option>
+    </select>
+
+
+
+    <div class="bottom">
+
+      <label for="rank">Rank:</label>
+      <select (change)="rankData($event)" name="" id="rank">
+        <option value="" selected>Select Your Rank</option>
+        <option value="15">{{first}}</option>
+        <option value="10">{{second}}</option>
+        <option value="5">{{third}}</option>
+      </select>
+
+      <label for="100">First 100 Admission:</label>
+      <select (change)="top100($event)">
+        <option>Select a Option</option>
+        <option>Yes</option>
+        <option>NO</option>
+      </select>
+    </div>
+  </div>
+
+
+
+</div>
+
+<div class="container">
+  <p><b> Fee Details</b></p>
+  <p><b> Gurukul Tution Fees = {{totalFee}} </b></p>
+  <p>Less Scholarship</p>
+
+  <h3>1. Merit Based Scholarship</h3>
+
+  <table class="table table-bordered border">
+    <tr style="background-color: White ; color:black;">
+      <th>Subject</th>
+      <th>Grade</th>
+      <th>Scholorship</th>
+    </tr>
+
+    <tr>
+      <td>{{sub1name}}</td>
+      <td>{{sub1}}</td>
+      <td id="eng">{{english}}%</td>
+
+    </tr>
+    <tr>
+      <td>{{sub2name}}</td>
+      <td>{{sub2}}</td>
+      <td id="nep">{{nepali}}%</td>
+
+
+    </tr>
+    <tr>
+      <td>{{sub3name}}</td>
+      <td>{{sub3}}</td>
+      <td id="math">{{math}}%</td>
+
+
+    </tr>
+    <tr>
+      <td>{{sub4name}}</td>
+      <td>{{sub4}}</td>
+      <td id="science">{{science}}%</td>
+
+
+    </tr>
+    <tr>
+      <td>{{sub5name}}</td>
+      <td>{{sub5}}</td>
+      <td id="acc">{{account}}%</td>
+
+
+    </tr>
+    <tr>
+      <td></td>
+      <td><b> Total</b></td>
+
+      <td><b>{{sum}}%</b></td>
+    </tr>
+    <tr style="background-color:green ;">
+      <td><b>Scholarship Amount</b></td>
+      <td></td>
+      <td>{{lessP}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Fee After First Scholorship</b></td>
+      <td>{{lessFirst}}</td>
+    </tr>
+
+  </table>
+  <h3> 2. College Topper Scholarship</h3>
+  <table class="table table-bordered border">
+    <tr style="background-color: White ; color:black;">
+      
+      <th></th>
+      <th><b>Rank</b></th>
+      <th><b>Scholorship</b></th>
+
+
+    </tr>
+
+    <tr>
+      <td>Collage Topper</td>
+      <td>{{top}}</td>
+      <td id="rank">{{rank}}%</td>
+
+    </tr>
+    <tr style="background-color:green ;">
+      <td>Scholarship Amount</td>
+      <td></td>
+      <td>{{secondS}}</td>
+
+
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Fee After Second Scholarship</b></td>
+      <td>{{less2}}</td>
+
+
+    </tr>
+
+
+  </table>
+
+  <hr>
+ 
+
+  <h3> 3. First Come First Serve</h3>
+  <table class="table table-bordered">
+
+
+    <tr>
+      <td>
+      </td>
+
+
+    </tr>
+    <tr>
+      <td>First 100 Admission</td>
+      <td>{{topH}}</td>
+      <td>{{topText}}%</td>
+
+    </tr>
+    <tr style="background-color:green ;">
+      <td>Scholorship Amount</td>
+      <td></td>
+      <td>{{thirdS}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>Fee After Third Scholarship</b></td>
+      <td>{{less3}}</td>
+    </tr>
+
+  </table>
+  <br>
+
+  <!--   -->
+  <h3>Total Scholarship Amount</h3>
+  <table class="table table-bordered">
+    <tr>
+      <td></td>
+      <td>Total</td>
+      <td>{{totalAmt}}</td>
+
+
+    </tr>
+    <!-- <tr>
+      <td><b> Net Fee</b></td>
+      <td>{{netFee}}</td>
+    </tr> -->
+  </table>
+<br>
+  <table class="table table-bordered" >
+   
+    
+
+    <tr style="background-color:cadetblue ;">
+      <td><b> Net Payable Fee</b></td>
+      <td>{{netFee}}</td>
+      <td></td>
+    </tr>
+    
+  </table>
+  <br><br>
+  <br>
+  <hr>
+
+
+</div>

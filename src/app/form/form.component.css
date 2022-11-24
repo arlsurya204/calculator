@@ -1,0 +1,28 @@
+.container{
+    color: white;
+}
+select{
+    padding: 4px;
+    margin: 15px;
+}
+
+.bottom{
+    padding-left: 350px;
+}
+/* .group1 select{
+    padding: 4px;
+    margin: 22;
+
+} */
+
+.group1{
+    padding: 6px;
+    margin: 20px;
+}
+
+
+.table{
+    border-color: white;
+    color: white;
+    /* text-align: center; */
+}
